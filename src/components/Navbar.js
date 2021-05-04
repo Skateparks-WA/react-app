@@ -9,7 +9,9 @@ class SkateNav extends React.Component {
   render() {
     return (
       <>
-      <Navbar bg="dark" variant="dark">
+      
+
+      <Navbar  style={{backgroundColor: "#0a1935"}} variant="dark" >
       <Navbar.Brand href="#home">Navbar</Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href="#home">Home</Nav.Link>
