@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Button, Container, CardColumns } from "react-bootstrap";
+import { Container, CardColumns } from "react-bootstrap";
 import Park from "./Park";
 export default class Results extends Component {
   render() {

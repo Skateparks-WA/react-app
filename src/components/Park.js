@@ -14,7 +14,7 @@ export default class Park extends Component {
           <Card.Body>
             <Card.Title>Lake Forest Park </Card.Title>
             <Card.Text>Miles Away: 3.5 </Card.Text>
-            <Card.Text>😍 =</Card.Text>
+            <Card.Text>😍 </Card.Text>
             <MyModal />
           </Card.Body>
         </Card>
@@ -23,7 +23,7 @@ export default class Park extends Component {
           <Card.Body>
             <Card.Title>Lake Forest Park </Card.Title>
             <Card.Text>Miles Away: 3.5 </Card.Text>
-            <Card.Text>😍 =</Card.Text>
+            <Card.Text></Card.Text>
             <MyModal />
           </Card.Body>
         </Card>
@@ -32,7 +32,7 @@ export default class Park extends Component {
           <Card.Body>
             <Card.Title>Lake Forest Park </Card.Title>
             <Card.Text>Miles Away: 3.5 </Card.Text>
-            <Card.Text>😍 =</Card.Text>
+            <Card.Text>😍</Card.Text>
             <MyModal />
           </Card.Body>
         </Card>

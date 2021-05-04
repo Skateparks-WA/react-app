@@ -7,7 +7,7 @@ class SkateNav extends React.Component {
     return (
       <>
         <Navbar style={{ backgroundColor: "#0a1935" }} variant="dark">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img
               alt=""
               src={logo}
@@ -18,9 +18,10 @@ class SkateNav extends React.Component {
             
           </Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Profile</Nav.Link>
-            <Nav.Link href="#pricing">Favorites</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="#profile">Profile</Nav.Link>
+            <Nav.Link href="#favorites">Favorites</Nav.Link>
+            <Nav.Link href="/about">Team</Nav.Link>
           </Nav>
           <Form inline>
             <Button variant="warning" type="submit">Login</Button>
