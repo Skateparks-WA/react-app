@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-import { Container, CardColumns } from "react-bootstrap";
+import { CardColumns } from "react-bootstrap";
 import Park from "./Park";
 
 export default class Results extends Component {
+ 
+
   render() {
+  
     return (
       <div
         style={{
@@ -22,7 +25,8 @@ export default class Results extends Component {
           }}
         >
           <CardColumns>
-            <Park />
+            
+            <Park parks={this.props.parks}/>
           </CardColumns>
         </div>
       </div>

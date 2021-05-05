@@ -7,53 +7,26 @@ import image1 from "../assets/img/skater.jpg";
 
 export default class Park extends Component {
   render() {
+    
     return (
       <div>
         <Card onClick={this.addFavorite}>
           <Card.Img src={image1}></Card.Img>
           <Card.Body>
-            <Card.Title>Lake Forest Park </Card.Title>
-            <Card.Text>Miles Away: 3.5 </Card.Text>
-            <Card.Text>😍 </Card.Text>
-            <MyModal />
+            <Card.Title>{this.props.parks[0].name} Park</Card.Title>
+            <Card.Text>
+              <b>Native Lands:</b> {this.props.parks[0].native_land}
+            </Card.Text>
+            <Card.Text>
+              <b>Miles Away: </b> 3.2
+            </Card.Text>
+            <Card.Text>😍|🚻|☔|💡 </Card.Text>
+            <MyModal
+              parks={this.props.parks} 
+            />
           </Card.Body>
         </Card>
-        <Card onClick={this.addFavorite}>
-          <Card.Img src={image2}></Card.Img>
-          <Card.Body>
-            <Card.Title>Lake Forest Park </Card.Title>
-            <Card.Text>Miles Away: 3.5 </Card.Text>
-            <Card.Text></Card.Text>
-            <MyModal />
-          </Card.Body>
-        </Card>
-        <Card onClick={this.addFavorite}>
-          <Card.Img src={image3}></Card.Img>
-          <Card.Body>
-            <Card.Title>Lake Forest Park </Card.Title>
-            <Card.Text>Miles Away: 3.5 </Card.Text>
-            <Card.Text>😍</Card.Text>
-            <MyModal />
-          </Card.Body>
-        </Card>
-        <Card onClick={this.addFavorite}>
-          <Card.Img src={image2}></Card.Img>
-          <Card.Body>
-            <Card.Title>Lake Forest Park </Card.Title>
-            <Card.Text>Miles Away: 3.5 </Card.Text>
-            <Card.Text></Card.Text>
-            <MyModal />
-          </Card.Body>
-        </Card>
-        <Card onClick={this.addFavorite}>
-          <Card.Img src={image1}></Card.Img>
-          <Card.Body>
-            <Card.Title>Lake Forest Park </Card.Title>
-            <Card.Text>Miles Away: 3.5 </Card.Text>
-            <Card.Text>😍 </Card.Text>
-            <MyModal />
-          </Card.Body>
-        </Card>
+        
       </div>
     );
   }
