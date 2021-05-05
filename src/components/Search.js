@@ -7,6 +7,7 @@ export default class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      location: [],
       parks: [],
       searchQuery: "",
     };
@@ -14,28 +15,30 @@ export default class Search extends Component {
 
   getLocation = async (event) => {
     event.preventDefault();
+    const locationKey = process.env.REACT_APP_LOCATION_IQ_KEY;
     try {
-      const backendParks = `http://localhost:3001/location?searchQuery=${this.state.searchQuery}`;
+      const backendParks = `https://us1.locationiq.com/v1/search.php?key=${locationKey}&q=${this.state.searchQuery}&format=json`;
       const response = await axios.get(backendParks);
-      const parks = response.data;
-      this.setState({ parks: parks });
-      console.log("the is the location response", this.state.parks);
+      const location = response.data[0];
+      this.setState({ location: location });
+      console.log("the is the location response", this.state.location);
+      this.getParks()
     } catch (err) {
       console.log(err);
     }
   };
 
-  // getParks = async () => {
-  //   try {
-  //     const backendMovies = `http://localhost:3001/parks`;
-  //     const response = await axios.get(backendMovies);
-  //     const movies = response.data;
-  //     this.setState({ movies: movies });
-  //     console.log("the is the movies response", this.state.movies);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  getParks = async () => {
+    try {
+      const sendLocation = `http://localhost:3001/location?searchQuery=${this.state.location}`;
+      const parksResponse = await axios.get(sendLocation);
+      const parks = parksResponse.data;
+      this.setState({ parks: parks });
+      console.log("the is the parks response", this.state.parks);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   render() {
     return (
