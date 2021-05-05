@@ -18,17 +18,7 @@ export default class MyModal extends Component {
   };
 
   render() {
-    console.log("yooooooo this on parks", this.props.parks);
-    // name={this.props.parks[0].name}
-    //           nativeLand={this.props.parks[0].native_land}
-    //           city={this.props.parks[0].city}
-    //           fullAddy={this.props.parks[0].full_address}
-    //           diff={this.props.parks[0].difficulty}
-    //           custLevel={this.props.parks[0].crust_level}
-    //           diy={this.props.parks[0].diy}
-    //           rain={this.props.parks[0].rain_cover}
-    //           bathRoom={this.props.parks[0].public_bathroom}
-    //           light={this.props.parks[0].night_light}
+    const index = this.props.index;
     return (
       <div>
         <Button
@@ -43,36 +33,38 @@ export default class MyModal extends Component {
             closeButton
             onClick={() => this.setState({ showModal: false })}
           >
-            <Modal.Title>{this.props.parks[0].name} Park</Modal.Title>
+            <Modal.Title>{this.props.parks.name} Park</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Card.Img></Card.Img>
             <Card.Body>
               <Card.Title>
                 <b>Native Lands: </b>
-                {this.props.parks[0].native_land}{" "}
+                {this.props.parks.native_land}{" "}
               </Card.Title>
 
               <Card.Text>
-                <b>City: </b> {this.props.parks[0].city}{" "}
+                <b>City: </b> {this.props.parks.city}{" "}
               </Card.Text>
               <Card.Text>
-                <b>Full Address : </b> {this.props.parks[0].full_address}{" "}
+                <b>Full Address : </b> {this.props.parks.full_address}{" "}
               </Card.Text>
               <Card.Text>
-                <b>Difficulty : </b> {this.props.parks[0].difficulty}{" "}
+                <b>Difficulty : </b> {this.props.parks.difficulty}{" "}
               </Card.Text>
               <Card.Text>
-                <b>Crust Level : </b> {this.props.parks[0].crust_level}{" "}
+                <b>Crust Level : </b> {this.props.parks.crust_level}{" "}
               </Card.Text>
               <Card.Text>
-                <b>DIY : </b> {this.props.parks[0].diy ? "🛠️" : "🚫"}{" "} 
+                <b>DIY : </b> {this.props.parks.diy ? "🛠️" : "🚫"}{" "}
               </Card.Text>
               <Card.Text>
-                <b>Public Bathrooms : </b> {this.props.parks[0].public_bathroom ? "🚻" : "🚫"}{" "}
+                <b>Public Bathrooms : </b>{" "}
+                {this.props.parks.public_bathroom ? "🚻" : "🚫"}{" "}
               </Card.Text>
               <Card.Text>
-                <b>Night Lights : </b> {this.props.parks[0].night_light ? "💡" : "🚫"}{" "}
+                <b>Night Lights : </b>{" "}
+                {this.props.parks.night_light ? "💡" : "🚫"}{" "}
               </Card.Text>
             </Card.Body>
           </Modal.Body>
