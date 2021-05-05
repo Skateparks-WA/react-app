@@ -47,13 +47,14 @@ export default class Search extends Component {
           text="light"
           style={{
             backgroundColor: "#0d4086",
-            maxWidth: 650,
+            width: '80%',
+            maxWidth: '1000px',
             marginLeft: "auto",
             marginRight: "auto",
             marginTop: -100,
           }}
         >
-          <Card.Header>Skate WA</Card.Header>
+          <Card.Header>❤️🛹</Card.Header>
           <Card.Body>
             <Card.Title>Search Skate Parks</Card.Title>
             <Card.Text>
