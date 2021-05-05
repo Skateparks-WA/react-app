@@ -8,7 +8,7 @@ export default class Search extends Component {
     super(props);
     this.state = {
       location: [],
-      parks: [],
+      parks: [{"_id":{"$oid":"609210af43d73f609cc66fd8"},"name":"Aberdeen","street_address":"E Perry St & S Dewey St.","city":"Aberdeen","state":"WA","zip":"98520","full_address":"E Perry St & S Dewey St. Aberdeen, WA 98520","latitude":{"$numberDouble":"46.9673768"},"longitude":{"$numberDouble":"-123.7906958"},"concat":"46.9673768,-123.7906958","native_land":"Coast Salish, Chehalis","tags":null,"bowl":null,"rails":null,"ledges":null,"rain_cover":true,"night_light":true,"difficulty":9,"crust_level":3,"public_bathroom":true,"diy":true}],
       searchQuery: "",
     };
   }
@@ -30,10 +30,10 @@ export default class Search extends Component {
 
   getParks = async () => {
     try {
-      const sendLocation = `http://localhost:3001/location?searchQuery=${this.state.location}`;
-      const parksResponse = await axios.get(sendLocation);
-      const parks = parksResponse.data;
-      this.setState({ parks: parks });
+      // const sendLocation = `http://localhost:3001/location?searchQuery=${this.state.location}`;
+      // const parksResponse = await axios.get(sendLocation);
+      // const parks = parksResponse.data;
+      // this.setState({ parks: parks });
       console.log("the is the parks response", this.state.parks);
     } catch (err) {
       console.log(err);
@@ -76,7 +76,7 @@ export default class Search extends Component {
             </Form>
           </Card.Body>
         </Card>
-        <Results />
+        <Results parks={this.state.parks} />
       </div>
     );
   }
