@@ -1,0 +1,17 @@
+.team-wrapper {
+  background-color: #e4e4e4;
+  padding-bottom: 20%;
+}
+
+.team-jumbo {
+  background-color: #ffffff !important;
+  margin-top: 60px;
+}
+
+.search-card {
+  background-color: #0d4086 !important;
+  width: 80%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}

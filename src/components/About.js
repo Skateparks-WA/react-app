@@ -6,7 +6,7 @@ import tek from "../assets/img/tek.png";
 export default class About extends Component {
   render() {
     return (
-      <div style={{ backgroundColor: '#e4e4e4', paddingBottom: '20%'}}>
+      <div className="team-wrapper">
         <Navbar />
         <Container style={{ marginTop: "160px" }}>
           <Row>
@@ -14,7 +14,7 @@ export default class About extends Component {
               <Image src={tek} rounded />
             </Col>
             <Col xs={6} md={8}>
-              <Jumbotron style={{backgroundColor: '#ffffff', marginTop: "60px" }}>
+              <Jumbotron className="team-jumbo">
                 <h1>Tek Jones</h1>
                 <p>
                   This is a simple hero unit, a simple jumbotron-style component
@@ -32,7 +32,9 @@ export default class About extends Component {
               <Image src={tek} rounded />
             </Col>
             <Col xs={6} md={8}>
-              <Jumbotron style={{backgroundColor: '#ffffff', marginTop: "60px" }}>
+              <Jumbotron
+                className="team-jumbo"
+              >
                 <h1>Hello, world!</h1>
                 <p>
                   This is a simple hero unit, a simple jumbotron-style component
@@ -50,7 +52,9 @@ export default class About extends Component {
               <Image src={tek} rounded />
             </Col>
             <Col xs={6} md={8}>
-              <Jumbotron style={{backgroundColor: '#ffffff', marginTop: "60px" }}>
+              <Jumbotron
+                className="team-jumbo"
+              >
                 <h1>Hello, world!</h1>
                 <p>
                   This is a simple hero unit, a simple jumbotron-style component
@@ -63,12 +67,14 @@ export default class About extends Component {
               </Jumbotron>
             </Col>
           </Row>
-          <Row style={{ marginTop: "90px",}}>
+          <Row style={{ marginTop: "90px" }}>
             <Col xs={6} md={4}>
               <Image src={tek} rounded />
             </Col>
             <Col xs={6} md={8}>
-              <Jumbotron style={{backgroundColor: '#ffffff', marginTop: "60px" }}>
+              <Jumbotron
+                className="team-jumbo"
+              >
                 <h1>Hello, world!</h1>
                 <p>
                   This is a simple hero unit, a simple jumbotron-style component
