@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import { Card, Button, Form, Col } from "react-bootstrap";
-import Results from './Results';
+import Results from "./Results";
 import axios from "axios";
-
 
 export default class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
       parks: [],
-      searchQuery: ""
+      searchQuery: "",
     };
   }
 
@@ -38,21 +37,13 @@ export default class Search extends Component {
   //   }
   // };
 
-
-
   render() {
     return (
       <div>
         <Card
           text="light"
-          style={{
-            backgroundColor: "#0d4086",
-            width: '80%',
-            maxWidth: '1000px',
-            marginLeft: "auto",
-            marginRight: "auto",
-            marginTop: -100,
-          }}
+          className="search-card"
+          style={{ marginTop: "-100px" }}
         >
           <Card.Header>❤️🛹</Card.Header>
           <Card.Body>
@@ -61,7 +52,7 @@ export default class Search extends Component {
               With supporting text below as a natural lead-in to additional
               content. {this.state.searchQuery}
             </Card.Text>
-            <Form  role="form" onSubmit={this.getLocation}>
+            <Form role="form" onSubmit={this.getLocation}>
               <Form.Row className="align-items-center">
                 <Col className="my-1">
                   <Form.Label htmlFor="inlineFormInputName" srOnly>
@@ -70,7 +61,9 @@ export default class Search extends Component {
                   <Form.Control
                     id="inlineFormInputName"
                     placeholder="Skate or Die"
-                    onChange={(e) => this.setState({ searchQuery: e.target.value })}
+                    onChange={(e) =>
+                      this.setState({ searchQuery: e.target.value })
+                    }
                   />
                 </Col>
                 <Col xs="auto" className="my-1">
@@ -81,8 +74,6 @@ export default class Search extends Component {
           </Card.Body>
         </Card>
         <Results />
-
-
       </div>
     );
   }
