@@ -36,6 +36,24 @@ export default class Park extends Component {
             <MyModal />
           </Card.Body>
         </Card>
+        <Card onClick={this.addFavorite}>
+          <Card.Img src={image2}></Card.Img>
+          <Card.Body>
+            <Card.Title>Lake Forest Park </Card.Title>
+            <Card.Text>Miles Away: 3.5 </Card.Text>
+            <Card.Text></Card.Text>
+            <MyModal />
+          </Card.Body>
+        </Card>
+        <Card onClick={this.addFavorite}>
+          <Card.Img src={image1}></Card.Img>
+          <Card.Body>
+            <Card.Title>Lake Forest Park </Card.Title>
+            <Card.Text>Miles Away: 3.5 </Card.Text>
+            <Card.Text>😍 </Card.Text>
+            <MyModal />
+          </Card.Body>
+        </Card>
       </div>
     );
   }

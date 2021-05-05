@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container, CardColumns } from "react-bootstrap";
 import Park from "./Park";
+
 export default class Results extends Component {
   render() {
     return (
@@ -12,14 +13,18 @@ export default class Results extends Component {
           backgroundColor: "#e4e4e4",
         }}
       >
-        <Container
-          fluid
-          style={{ paddingTop: "200px", width: "100%", height: "100%", MaxWidth: '100px' }}
+        <div
+          style={{
+            paddingTop: "200px",
+            maxWidth: '80%',
+            minWidth: '90%',
+            margin: 'auto'
+          }}
         >
           <CardColumns>
             <Park />
           </CardColumns>
-        </Container>
+        </div>
       </div>
     );
   }
