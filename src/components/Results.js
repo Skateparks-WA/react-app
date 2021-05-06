@@ -24,6 +24,7 @@ export default class Results extends Component {
       >
         <div
           style={{
+            backgroundColor: "red",
             paddingTop: "200px",
             maxWidth: "80%",
             minWidth: "90%",
@@ -31,9 +32,11 @@ export default class Results extends Component {
           }}
         >
 
-          <Park
-            parks={this.props.parks}
-            seeMore={this.state.seeMore} />
+          <CardColumns>
+          
+            <Park parks={this.props.parks} />
+
+            </CardColumns>
 
         </div>
         <Button onClick={() => this.setState({ seeMore: this.state.seeMore + 10 })}>

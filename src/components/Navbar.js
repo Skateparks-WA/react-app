@@ -14,7 +14,7 @@ class SkateNav extends React.Component {
               width="239"
               height="74"
               className="d-inline-block align-top"
-            />{" "}
+            />
             
           </Navbar.Brand>
           <Nav className="mr-auto">
