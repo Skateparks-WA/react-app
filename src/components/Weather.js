@@ -1,19 +1,21 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 
 export default class Weather extends Component {
   render() {
+    
     return (
       <div>
+        
         <Container style={{marginBottom: '60px'}}>
           
             <Row>
               <Col>
                 <Card>
-                  <Card.Header as="h5">Current Forcast</Card.Header>
+                  <Card.Header as="h5">Current Weather</Card.Header>
                   <Card.Body>
                     <Card.Text>
-                     <b>weather: </b> 
+                     <b>Weather: </b> {this.props.weather}
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -22,10 +24,9 @@ export default class Weather extends Component {
                 <Card>
                   <Card.Header as="h5">Day Forcast</Card.Header>
                   <Card.Body>
-                    <Card.Title>Special title treatment</Card.Title>
+                    
                     <Card.Text>
-                      With supporting text below as a natural lead-in to
-                      additional content.
+                      <b>Weather: </b> {this.props.weatherDay}
                     </Card.Text>
                   </Card.Body>
                 </Card>
