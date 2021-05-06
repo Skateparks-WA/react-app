@@ -32,11 +32,13 @@ export default class Results extends Component {
           }}
         >
 
-          <CardColumns>
+          <CardDeck>
           
-            <Park parks={this.props.parks} />
+            <Park 
+            parks={this.props.parks}
+            seeMore={this.state.seeMore} />
 
-            </CardColumns>
+            </CardDeck>
 
         </div>
         <Button onClick={() => this.setState({ seeMore: this.state.seeMore + 10 })}>

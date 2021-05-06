@@ -9,10 +9,10 @@ export default class Park extends Component {
   render() {
     return (
       <>
-        {this.props.parks.map((parks, index) => {
+        {this.props.parks.slice(0,this.props.seeMore).map((parks, index) => {
           return (
 
-              <Card style={{minWidth: '12em'}} onClick={this.addFavorite}>
+              <Card style={{minWidth: '18em'}} onClick={this.addFavorite}>
                 <Card.Img src={image1}></Card.Img>
                 <Card.Body>
                   <Card.Title>{parks.name}Park</Card.Title>
