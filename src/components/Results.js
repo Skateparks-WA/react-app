@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { CardColumns, Card, Button } from "react-bootstrap";
+import { CardDeck, Card, Button } from "react-bootstrap";
 import Park from "./Park";
 import Weather from "./Weather";
 
@@ -42,7 +42,7 @@ export default class Results extends Component {
                   <Button variant="primary">All Parks</Button>
                 </>
               )}
-              <Park parks={this.props.parks} seeMore={this.state.seeMore} />
+              <Park parks={this.props.parks} seeMore={this.state.seeMore} covered={this.props.covered} />
             </Card.Body>
             <Card.Footer>
               {" "}
@@ -59,11 +59,6 @@ export default class Results extends Component {
             </Card.Footer>
           </Card>
 
-          <CardDeck>
-            <Park parks={this.props.parks} 
-            seeMore={this.state.seeMore}
-            covered={this.props.covered} />
-          </CardDeck>
 
         </div>
       </div>

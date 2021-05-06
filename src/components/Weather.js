@@ -13,7 +13,7 @@ export default class Weather extends Component {
                   <Card.Header as="h5">Current Forcast</Card.Header>
                   <Card.Body>
                     <Card.Text>
-                     <b>weather: </b> {this.props.weather.data[0].weather.description}
+                     <b>weather: </b> 
                     </Card.Text>
                   </Card.Body>
                 </Card>
