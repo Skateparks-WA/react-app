@@ -30,7 +30,9 @@ export default class Results extends Component {
           }}
         >
           <CardDeck>
-            <Park parks={this.props.parks} seeMore={this.state.seeMore} />
+            <Park parks={this.props.parks} 
+            seeMore={this.state.seeMore}
+            covered={this.props.covered} />
           </CardDeck>
         </div>
         {this.props.parks.length > 1 && (
