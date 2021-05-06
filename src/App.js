@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Favorites from "./components/Favorites"
 import Search from "./components/Search";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from "./components/About.js";
@@ -21,10 +22,14 @@ class App extends React.Component {
               <Search />
             </Route>
             <Route exact path="/about">
+              <NavBar auth0={this.props.auth0}/>
               <About />
             </Route>
             <Route exact path="/profile"></Route>
-            <Route exact path="/favorites"></Route>
+            <Route exact path="/favorites">
+              <NavBar auth0={this.props.auth0}/>
+              <Favorites />
+            </Route>
           </Switch>
         </Router>
 

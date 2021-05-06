@@ -7,7 +7,6 @@ export default class About extends Component {
   render() {
     return (
       <div className="team-wrapper">
-        <Navbar />
         <Container style={{ marginTop: "160px" }}>
           <Row>
             <Col xs={6} md={4}>
