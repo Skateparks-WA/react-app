@@ -1,5 +1,11 @@
-import React, { Component, } from "react";
-import { Card, Button, Form, Col, ToggleButton, ButtonGroup } from "react-bootstrap";
+import React, { Component } from "react";
+import {
+  Card,
+  Button,
+  Form,
+  Col
+ 
+} from "react-bootstrap";
 import Results from "./Results";
 
 import axios from "axios";
@@ -14,21 +20,20 @@ export default class Search extends Component {
       searchQuery: "",
       lat: "",
       lon: "",
-      weather: [],
-      covered: false
-
+      weather: "",
+      weatherDay: [],
+      covered: false,
     };
   }
 
   filterCovered = () => {
     if (this.state.covered === false) {
-    this.setState({ covered: true})
+      this.setState({ covered: true });
     } else if (this.state.covered === true) {
-      this.setState({covered: false});
+      this.setState({ covered: false });
     }
-      
-  }
- 
+  };
+
   getLocation = async (event) => {
     event.preventDefault();
     const locationKey = process.env.REACT_APP_LOCATION_IQ_KEY;
@@ -41,7 +46,8 @@ export default class Search extends Component {
       this.setState({ lon: location.lon });
       this.setState({ latlon: [location.lat, location.lon] });
       this.getParks();
-      this.getWeather();
+      this.getWeatherCurrent();
+      this.getWeatherDay();
     } catch (err) {
       console.log(err);
     }
@@ -53,24 +59,32 @@ export default class Search extends Component {
       const parksResponse = await axios.get(sendLocation);
       const parks = parksResponse.data;
       this.setState({ parks: parks });
-
-      
-
-      console.log("Yo this is send location", parksResponse)
-
     } catch (err) {
       console.log(err);
     }
   };
 
-  getWeather = async () => {
+  getWeatherCurrent = async () => {
     const weatherKey = process.env.REACT_APP_WEATHER_KEY;
     try {
-      const currentWeather = `https://api.weatherbit.io/v2.0/current?lat=46.9673768&lon=-123.7906958&key=${weatherKey}&include=minutely`;
+      const currentWeather = `https://api.weatherbit.io/v2.0/current?lat=${this.state.lat}&lon=${this.state.lon}&key=${weatherKey}&include=minutely`;
       const response = await axios.get(currentWeather);
-      const weather = response.data;
+      const weather = response.data.data[0].weather.description;
       this.setState({ weather: weather });
-      console.log("Yo this is weather", this.state.weather);
+      
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  getWeatherDay = async () => {
+    const weatherKey = process.env.REACT_APP_WEATHER_KEY;
+    try {
+      const currentWeather = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${this.state.lat}&lon=${this.state.lon}&key=${weatherKey}`;
+      const response = await axios.get(currentWeather);
+      const weatherDay = response.data.data[0].weather.description;
+      this.setState({ weatherDay: weatherDay });
+      console.log("Yo this is weather", this.state.weatherDay);
     } catch (err) {
       console.log(err);
     }
@@ -109,15 +123,22 @@ export default class Search extends Component {
                   <Button type="submit">Submit</Button>
                 </Col>
               </Form.Row>
-              <Form.Check inline type="checkbox" label="Covered" onChange={this.filterCovered} />
+              <Form.Check
+                inline
+                type="checkbox"
+                label="Covered"
+                onChange={this.filterCovered}
+              />
             </Form>
           </Card.Body>
         </Card>
 
-
-        
-        <Results parks={this.state.parks} weather={this.state.weather} covered={this.state.covered}/>
-
+        <Results
+          parks={this.state.parks}
+          weather={this.state.weather}
+          weatherDay={this.state.weatherDay}
+          covered={this.state.covered}
+        />
       </div>
     );
   }

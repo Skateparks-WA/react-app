@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Card, CardDeck, Container, Row } from "react-bootstrap";
 import MyModal from "./Mymodal";
-import image2 from "../assets/img/venice-skate.jpg";
-import image3 from "../assets/img/beachskate.jpg";
 import image1 from "../assets/img/skater.jpg";
 
 export default class Park extends Component {
@@ -19,6 +17,7 @@ export default class Park extends Component {
             <Card
               style={{ minWidth: "18em", maxWidth: "18em", marginBottom:"5%"}}
               onClick={this.addFavorite}
+              key={index}
             >
               <Card.Img src={image1}></Card.Img>
               <Card.Body>

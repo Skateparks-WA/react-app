@@ -18,7 +18,7 @@ export default class MyModal extends Component {
   };
 
   render() {
-    const index = this.props.index;
+    
     return (
       <div>
         <Button
@@ -69,6 +69,10 @@ export default class MyModal extends Component {
               <Card.Text>
                 <b>Night Lights : </b>{" "}
                 {this.props.parks.night_light ? "💡" : "🚫"}{" "}
+              </Card.Text>
+              <Card.Text>
+                <b>Rain Cover : </b>{" "}
+                {this.props.parks.rain_cover ? "☔" : "🚫"}{" "}
               </Card.Text>
             </Card.Body>
           </Modal.Body>

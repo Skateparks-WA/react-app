@@ -1,4 +1,4 @@
-import { Navbar, Nav, Form, Button } from "react-bootstrap";
+import { Navbar, Nav, Form} from "react-bootstrap";
 import React from "react";
 import logo from '../assets/img/skatewa-logo.png'
 import LoginButton from "./Login.js"

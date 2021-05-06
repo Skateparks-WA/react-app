@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { CardDeck, Card, Button } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import Park from "./Park";
 import Weather from "./Weather";
 
@@ -30,8 +30,12 @@ export default class Results extends Component {
             margin: "auto",
           }}
         >
-
-          {this.props.parks.length > 1 && <Weather weather={this.props.weather} />}
+          {this.props.parks.length > 1 && (
+            <Weather
+              weather={this.props.weather}
+              weatherDay={this.props.weatherDay}
+            />
+          )}
           <Card className="text-center">
             <Card.Header></Card.Header>
             <Card.Body style={{ backgroundColor: "#eeeeee" }}>
@@ -42,7 +46,11 @@ export default class Results extends Component {
                   <Button variant="primary">All Parks</Button>
                 </>
               )}
-              <Park parks={this.props.parks} seeMore={this.state.seeMore} covered={this.props.covered} />
+              <Park
+                parks={this.props.parks}
+                seeMore={this.state.seeMore}
+                covered={this.props.covered}
+              />
             </Card.Body>
             <Card.Footer>
               {" "}
@@ -58,8 +66,6 @@ export default class Results extends Component {
               )}
             </Card.Footer>
           </Card>
-
-
         </div>
       </div>
     );
