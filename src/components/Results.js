@@ -10,15 +10,14 @@ export default class Results extends Component {
     };
   }
 
-
-
   render() {
     return (
       <div
         style={{
           marginTop: "-115px",
+          paddingBottom: "10%",
           width: "100%",
-          height: "100vh",
+          height: "100%",
           backgroundColor: "#e4e4e4",
         }}
       >
@@ -30,19 +29,18 @@ export default class Results extends Component {
             margin: "auto",
           }}
         >
-
           <CardDeck>
-          
-            <Park 
-            parks={this.props.parks}
-            seeMore={this.state.seeMore} />
-
-            </CardDeck>
-
+            <Park parks={this.props.parks} seeMore={this.state.seeMore} />
+          </CardDeck>
         </div>
-        <Button onClick={() => this.setState({ seeMore: this.state.seeMore + 10 })}>
-          See More
-        </Button>
+        {this.props.parks.length > 1 && (
+          <Button
+            onClick={() => this.setState({ seeMore: this.state.seeMore + 10 })}
+            style={{ margin: "auto", display: "block" }}
+          >
+            See More
+          </Button>
+        )}
       </div>
     );
   }
