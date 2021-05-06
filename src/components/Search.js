@@ -36,11 +36,11 @@ export default class Search extends Component {
 
   getParks = async () => {
     try {
-      const sendLocation = `http://localhost:3001/location?lat=${this.state.lat}&lon=${this.state.lon}}`;
+      const sendLocation = `http://localhost:3001/location?lat=${this.state.lat}&lon=${this.state.lon}`;
       const parksResponse = await axios.get(sendLocation);
       const parks = parksResponse.data;
       this.setState({ parks: parks });
-      console.log("Yo this is send location",sendLocation)
+      console.log("Yo this is send location",parksResponse)
     } catch (err) {
       console.log(err);
     }
