@@ -65,6 +65,7 @@ export default class Search extends Component {
           text="light"
           className="search-card"
           style={{ marginTop: "-100px" }}
+
         >
           <Card.Header>❤️🛹</Card.Header>
           <Card.Body>

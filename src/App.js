@@ -9,7 +9,9 @@ import './assets/css/app.css';
 class App extends React.Component {
   render() {
     return (
+      
       <>
+      <div style={{backgroundColor: "#e4e4e4", height: '100vh'}}>
         <Router>
           <Switch>
             <Route exact path="/">
@@ -24,6 +26,8 @@ class App extends React.Component {
             <Route exact path="/favorites"></Route>
           </Switch>
         </Router>
+
+      </div>
       </>
     );
   }
