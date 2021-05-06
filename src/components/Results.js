@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { CardColumns } from "react-bootstrap";
+import { CardColumns, CardDeck } from "react-bootstrap";
 import Park from "./Park";
 
 export default class Results extends Component {
@@ -21,11 +21,9 @@ export default class Results extends Component {
             margin: "auto",
           }}
         >
-          <CardColumns>
-            <>
-              <Park parks={this.props.parks} />
-            </>
-          </CardColumns>
+          
+            <Park parks={this.props.parks} />
+          
         </div>
       </div>
     );
