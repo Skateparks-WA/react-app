@@ -1,8 +1,17 @@
 import React, { Component } from "react";
-import { CardColumns, CardDeck } from "react-bootstrap";
+import { CardColumns, CardDeck, Button } from "react-bootstrap";
 import Park from "./Park";
 
 export default class Results extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      seeMore: 10,
+    };
+  }
+
+
+
   render() {
     return (
       <div
@@ -21,10 +30,15 @@ export default class Results extends Component {
             margin: "auto",
           }}
         >
-          
-            <Park parks={this.props.parks} />
-          
+
+          <Park
+            parks={this.props.parks}
+            seeMore={this.state.seeMore} />
+
         </div>
+        <Button onClick={() => this.setState({ seeMore: this.state.seeMore + 10 })}>
+          See More
+        </Button>
       </div>
     );
   }
