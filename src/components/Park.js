@@ -30,7 +30,7 @@ export default class Park extends Component {
               </Card.Body>
             </Card>
           );
-        }) : this.props.parks.slice(0, this.props.seeMore).filter(parks => parks.rain_cover === true).map((parks, index) => {
+        }) : this.props.parks.filter(parks => parks.rain_cover === true).slice(0, this.props.seeMore).map((parks, index) => {
           return (
             <Card
               style={{ minWidth: "18em", maxWidth: "18em", marginBottom:"5%"}}
