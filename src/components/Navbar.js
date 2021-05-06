@@ -21,7 +21,7 @@ class SkateNav extends React.Component {
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="#profile">Profile</Nav.Link>
-            <Nav.Link href="#favorites">Favorites</Nav.Link>
+            <Nav.Link href="/favorites">Favorites</Nav.Link>
             <Nav.Link href="/about">Team</Nav.Link>
           </Nav>
           {
