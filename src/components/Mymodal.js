@@ -38,10 +38,14 @@ export default class MyModal extends Component {
           <Modal.Body>
             <Card.Img></Card.Img>
             <Card.Body>
-              <Card.Title>
+            <Card.Text>
+                <b>Miles Away: </b>
+                {this.props.parks.distance.toFixed(4)}{" "}
+              </Card.Text>
+              <Card.Text>
                 <b>Native Lands: </b>
                 {this.props.parks.native_land}{" "}
-              </Card.Title>
+              </Card.Text>
 
               <Card.Text>
                 <b>City: </b> {this.props.parks.city}{" "}

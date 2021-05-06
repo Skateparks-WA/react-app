@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Card, Button, Form, Col } from "react-bootstrap";
 import Results from "./Results";
+
 import axios from "axios";
 
 export default class Search extends Component {
@@ -13,6 +14,7 @@ export default class Search extends Component {
       searchQuery: "",
       lat: "",
       lon: "",
+      weather: []
     };
   }
 
@@ -40,7 +42,7 @@ export default class Search extends Component {
       const parksResponse = await axios.get(sendLocation);
       const parks = parksResponse.data;
       this.setState({ parks: parks });
-      console.log("Yo this is send location",parksResponse)
+      
     } catch (err) {
       console.log(err);
     }
@@ -53,6 +55,7 @@ export default class Search extends Component {
       const response = await axios.get(currentWeather);
       const weather = response.data;
       this.setState({ weather: weather });
+      console.log("Yo this is weather", this.state.weather);
     } catch (err) {
       console.log(err);
     }
@@ -65,7 +68,6 @@ export default class Search extends Component {
           text="light"
           className="search-card"
           style={{ marginTop: "-100px" }}
-
         >
           <Card.Header>❤️🛹</Card.Header>
           <Card.Body>
@@ -95,7 +97,9 @@ export default class Search extends Component {
             </Form>
           </Card.Body>
         </Card>
-        <Results parks={this.state.parks} />
+
+        
+        <Results parks={this.state.parks} weather={this.state.weather} />
       </div>
     );
   }
