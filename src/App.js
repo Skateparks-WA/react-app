@@ -5,17 +5,18 @@ import Search from "./components/Search";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from "./components/About.js";
 import './assets/css/app.css';
+import { withAuth0 } from "@auth0/auth0-react";
 
 class App extends React.Component {
   render() {
     return (
-      
+
       <>
       <div style={{backgroundColor: "#e4e4e4", height: '100vh'}}>
         <Router>
           <Switch>
             <Route exact path="/">
-              <NavBar />
+              <NavBar auth0={this.props.auth0}/>
               <Hero />
               <Search />
             </Route>
@@ -33,4 +34,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withAuth0(App);
