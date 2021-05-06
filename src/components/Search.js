@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Card, Button, Form, Col } from "react-bootstrap";
+import React, { Component, } from "react";
+import { Card, Button, Form, Col, ToggleButton, ButtonGroup } from "react-bootstrap";
 import Results from "./Results";
 
 import axios from "axios";
@@ -14,10 +14,21 @@ export default class Search extends Component {
       searchQuery: "",
       lat: "",
       lon: "",
-      weather: []
+      weather: [],
+      covered: false
+
     };
   }
 
+  filterCovered = () => {
+    if (this.state.covered === false) {
+    this.setState({ covered: true})
+    } else if (this.state.covered === true) {
+      this.setState({covered: false});
+    }
+      
+  }
+ 
   getLocation = async (event) => {
     event.preventDefault();
     const locationKey = process.env.REACT_APP_LOCATION_IQ_KEY;
@@ -42,7 +53,11 @@ export default class Search extends Component {
       const parksResponse = await axios.get(sendLocation);
       const parks = parksResponse.data;
       this.setState({ parks: parks });
+
       
+
+      console.log("Yo this is send location", parksResponse)
+
     } catch (err) {
       console.log(err);
     }
@@ -94,12 +109,15 @@ export default class Search extends Component {
                   <Button type="submit">Submit</Button>
                 </Col>
               </Form.Row>
+              <Form.Check inline type="checkbox" label="Covered" onChange={this.filterCovered} />
             </Form>
           </Card.Body>
         </Card>
 
+
         
-        <Results parks={this.state.parks} weather={this.state.weather} />
+        <Results parks={this.state.parks} weather={this.state.weather} covered={this.state.covered}/>
+
       </div>
     );
   }

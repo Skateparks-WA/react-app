@@ -30,6 +30,7 @@ export default class Results extends Component {
             margin: "auto",
           }}
         >
+
           {this.props.parks.length > 1 && <Weather weather={this.props.weather} />}
           <Card className="text-center">
             <Card.Header></Card.Header>
@@ -57,6 +58,13 @@ export default class Results extends Component {
               )}
             </Card.Footer>
           </Card>
+
+          <CardDeck>
+            <Park parks={this.props.parks} 
+            seeMore={this.state.seeMore}
+            covered={this.props.covered} />
+          </CardDeck>
+
         </div>
       </div>
     );
