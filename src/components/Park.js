@@ -8,13 +8,11 @@ import image1 from "../assets/img/skater.jpg";
 export default class Park extends Component {
   render() {
     return (
-      <div>
+      <>
         {this.props.parks.map((parks, index) => {
           return (
-            <>
-            
 
-              <Card style={{maxWidth: '25%'}} onClick={this.addFavorite}>
+              <Card style={{minWidth: '12em'}} onClick={this.addFavorite}>
                 <Card.Img src={image1}></Card.Img>
                 <Card.Body>
                   <Card.Title>{parks.name}Park</Card.Title>
@@ -28,12 +26,11 @@ export default class Park extends Component {
                   <MyModal parks={parks} index={index}  />
                 </Card.Body>
               </Card>
-
             
-            </>
+          
           );
         })}
-      </div>
+      </>
     );
   }
 }

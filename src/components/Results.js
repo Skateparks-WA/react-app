@@ -15,15 +15,18 @@ export default class Results extends Component {
       >
         <div
           style={{
+            backgroundColor: "red",
             paddingTop: "200px",
             maxWidth: "80%",
             minWidth: "90%",
             margin: "auto",
           }}
         >
+          <CardColumns>
           
             <Park parks={this.props.parks} />
-          
+
+            </CardColumns>
         </div>
       </div>
     );
