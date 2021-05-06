@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { CardColumns, CardDeck, Button } from "react-bootstrap";
+import { CardColumns, Card, Button } from "react-bootstrap";
 import Park from "./Park";
+import Weather from "./Weather";
 
 export default class Results extends Component {
   constructor(props) {
@@ -29,20 +30,42 @@ export default class Results extends Component {
             margin: "auto",
           }}
         >
+
+          {this.props.parks.length > 1 && <Weather weather={this.props.weather} />}
+          <Card className="text-center">
+            <Card.Header></Card.Header>
+            <Card.Body style={{ backgroundColor: "#eeeeee" }}>
+              {this.props.parks.length < 1 && (
+                <>
+                  <Card.Title>See all parks Available</Card.Title>
+                  <Card.Text>Then filter your results based on tags</Card.Text>
+                  <Button variant="primary">All Parks</Button>
+                </>
+              )}
+              <Park parks={this.props.parks} seeMore={this.state.seeMore} />
+            </Card.Body>
+            <Card.Footer>
+              {" "}
+              {this.props.parks.length > 1 && (
+                <Button
+                  onClick={() =>
+                    this.setState({ seeMore: this.state.seeMore + 10 })
+                  }
+                  style={{ margin: "auto", display: "block" }}
+                >
+                  See More
+                </Button>
+              )}
+            </Card.Footer>
+          </Card>
+
           <CardDeck>
             <Park parks={this.props.parks} 
             seeMore={this.state.seeMore}
             covered={this.props.covered} />
           </CardDeck>
+
         </div>
-        {this.props.parks.length > 1 && (
-          <Button
-            onClick={() => this.setState({ seeMore: this.state.seeMore + 10 })}
-            style={{ margin: "auto", display: "block" }}
-          >
-            See More
-          </Button>
-        )}
       </div>
     );
   }

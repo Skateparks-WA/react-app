@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card } from "react-bootstrap";
+import { Card, CardDeck, Container, Row } from "react-bootstrap";
 import MyModal from "./Mymodal";
 import image2 from "../assets/img/venice-skate.jpg";
 import image3 from "../assets/img/beachskate.jpg";
@@ -9,7 +9,11 @@ export default class Park extends Component {
   render() {
     return (
       <>
-      {this.props.covered === false ? 
+
+        <Container fluid>
+          <Row>
+            <CardDeck>
+         {this.props.covered === false ? 
         this.props.parks.slice(0, this.props.seeMore).map((parks, index) => {
           return (
             <Card
@@ -51,6 +55,10 @@ export default class Park extends Component {
             </Card>
           );
         })}
+ 
+            </CardDeck>
+          </Row>
+        </Container>
       </>
     );
   }
