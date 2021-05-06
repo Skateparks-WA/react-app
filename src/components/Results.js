@@ -42,7 +42,11 @@ export default class Results extends Component {
                   <Button variant="primary">All Parks</Button>
                 </>
               )}
-              <Park parks={this.props.parks} seeMore={this.state.seeMore} covered={this.props.covered} />
+              <Park 
+              parks={this.props.parks} 
+              seeMore={this.state.seeMore} 
+              covered={this.props.covered}
+              lights={this.props.lights} />
             </Card.Body>
             <Card.Footer>
               {" "}

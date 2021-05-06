@@ -15,7 +15,8 @@ export default class Search extends Component {
       lat: "",
       lon: "",
       weather: [],
-      covered: false
+      covered: false,
+      lights: false
 
     };
   }
@@ -25,8 +26,15 @@ export default class Search extends Component {
     this.setState({ covered: true})
     } else if (this.state.covered === true) {
       this.setState({covered: false});
-    }
-      
+    } 
+  }
+
+  filterLights = () => {
+    if (this.state.lights === false) {
+    this.setState({ lights: true})
+    } else if (this.state.lights === true) {
+      this.setState({lights: false});
+    } 
   }
  
   getLocation = async (event) => {
@@ -110,6 +118,8 @@ export default class Search extends Component {
                 </Col>
               </Form.Row>
               <Form.Check inline type="checkbox" label="Covered" onChange={this.filterCovered} />
+              <Form.Check inline type="checkbox" label="Lights" onChange={this.filterLights} />
+
             </Form>
           </Card.Body>
         </Card>
