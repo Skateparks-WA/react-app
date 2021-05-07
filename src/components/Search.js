@@ -64,6 +64,8 @@ export default class Search extends Component {
     }
   };
 
+
+
   getWeatherCurrent = async () => {
     const weatherKey = process.env.REACT_APP_WEATHER_KEY;
     try {
@@ -138,6 +140,8 @@ export default class Search extends Component {
           weather={this.state.weather}
           weatherDay={this.state.weatherDay}
           covered={this.state.covered}
+          latlon={this.state.latlon}
+          location={this.state.location}
         />
       </div>
     );
