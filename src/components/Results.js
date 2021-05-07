@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card, Button } from "react-bootstrap";
 import Park from "./Park";
-import AllPark from "./allparks.js"
+import AllPark from "./allparks.js";
 import Weather from "./Weather";
 import axios from "axios";
 
@@ -10,7 +10,7 @@ export default class Results extends Component {
     super(props);
     this.state = {
       seeMore: 10,
-      allParks: []
+      allParks: [],
     };
   }
 
@@ -53,22 +53,28 @@ export default class Results extends Component {
           <Card className="text-center">
             <Card.Header></Card.Header>
             <Card.Body style={{ backgroundColor: "#eeeeee" }}>
-              {this.props.parks.length < 1 && (
-                <>
-                  <Card.Title>See all parks Available</Card.Title>
-                  <Card.Text>Then filter your results based on tags</Card.Text>
-                  <Button variant="primary" onClick={this.getAllParks}>All Parks</Button>
-                </>
-              )}
+              {this.state.allParks < 1 &&(
+                  this.props.parks.length < 1 && (
+                    <>
+                      <Card.Title>See all parks Available</Card.Title>
+                      <Card.Text>
+                        Then filter your results based on tags
+                      </Card.Text>
+                      <Button variant="primary" onClick={this.getAllParks}>
+                        All Parks
+                      </Button>
+                    </>
+                  )
+                )}
               <Park
                 parks={this.props.parks}
                 seeMore={this.state.seeMore}
                 covered={this.props.covered}
               />
-            <AllPark 
-            allParks={this.state.allParks}
-            covered={this.props.covered}>
-            </AllPark>
+              <AllPark
+                allParks={this.state.allParks}
+                covered={this.props.covered}
+              ></AllPark>
             </Card.Body>
             <Card.Footer>
               {" "}
