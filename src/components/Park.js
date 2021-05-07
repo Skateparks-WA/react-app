@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Card, CardDeck, Container, Row } from "react-bootstrap";
 import MyModal from "./Mymodal";
-import image1 from "../assets/img/skater.jpg";
+import imageArr from "../images.json"
+
 
 export default class Park extends Component {
   render() {
+      console.log(imageArr)
     return (
       <>
 
@@ -19,7 +21,7 @@ export default class Park extends Component {
               onClick={this.addFavorite}
               key={index}
             >
-              <Card.Img src={image1}></Card.Img>
+              <Card.Img src={`/img/${imageArr[index%imageArr.length]}`}></Card.Img>
               <Card.Body>
                 <Card.Title>{parks.name}Park</Card.Title>
                 <Card.Text>
@@ -39,7 +41,7 @@ export default class Park extends Component {
               style={{ minWidth: "18em", maxWidth: "18em", marginBottom:"5%"}}
               onClick={this.addFavorite}
             >
-              <Card.Img src={image1}></Card.Img>
+              <Card.Img src={`/img/${imageArr[index%imageArr.length]}`}></Card.Img>
               <Card.Body>
                 <Card.Title>{parks.name}Park</Card.Title>
                 <Card.Text>
