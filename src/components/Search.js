@@ -55,7 +55,7 @@ export default class Search extends Component {
 
   getParks = async () => {
     try {
-      const sendLocation = `https://skate-wa-server.herokuapp.com/location?lat=${this.state.lat}&lon=${this.state.lon}`;
+      const sendLocation = `http://localhost:3001/location?lat=${this.state.lat}&lon=${this.state.lon}`;
       const parksResponse = await axios.get(sendLocation);
       const parks = parksResponse.data;
       this.setState({ parks: parks });
@@ -102,8 +102,7 @@ export default class Search extends Component {
           <Card.Body>
             <Card.Title>Search Skate Parks</Card.Title>
             <Card.Text>
-              With supporting text below as a natural lead-in to additional
-              content. {this.state.searchQuery}
+              Find and filter skate parks nearest your address or city. Click in on each park to find more info
             </Card.Text>
             <Form role="form" onSubmit={this.getLocation}>
               <Form.Row className="align-items-center">
