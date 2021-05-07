@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import {
-  Card,
-  Button,
-  Form,
-  Col
- 
-} from "react-bootstrap";
+import { Card, Button, Form, Col } from "react-bootstrap";
 import Results from "./Results";
 
 import axios from "axios";
@@ -64,8 +58,6 @@ export default class Search extends Component {
     }
   };
 
-
-
   getWeatherCurrent = async () => {
     const weatherKey = process.env.REACT_APP_WEATHER_KEY;
     try {
@@ -73,7 +65,6 @@ export default class Search extends Component {
       const response = await axios.get(currentWeather);
       const weather = response.data.data[0].weather.description;
       this.setState({ weather: weather });
-      
     } catch (err) {
       console.log(err);
     }
@@ -104,7 +95,8 @@ export default class Search extends Component {
           <Card.Body>
             <Card.Title>Search Skate Parks</Card.Title>
             <Card.Text>
-              Find and filter skate parks nearest your address or city. Click in on each park to find more info
+              Find and filter skate parks nearest your address or city. Click in
+              on each park to find more info
             </Card.Text>
             <Form role="form" onSubmit={this.getLocation}>
               <Form.Row className="align-items-center">
