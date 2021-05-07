@@ -55,7 +55,7 @@ export default class Search extends Component {
 
   getParks = async () => {
     try {
-      const sendLocation = `http://localhost:3001/location?lat=${this.state.lat}&lon=${this.state.lon}`;
+      const sendLocation = `https://skate-wa-server.herokuapp.com/location?lat=${this.state.lat}&lon=${this.state.lon}`;
       const parksResponse = await axios.get(sendLocation);
       const parks = parksResponse.data;
       this.setState({ parks: parks });
