@@ -24,7 +24,7 @@ export default class AllPark extends Component {
                       >
                         <Card.Img src={`/img/${imageArr[index%imageArr.length]}`}></Card.Img>
                         <Card.Body>
-                          <Card.Title>{parks.name}Park</Card.Title>
+                          <Card.Title>{parks.name} Park</Card.Title>
                           <Card.Text>
                             <b>Native Lands:</b> {parks.native_land}
                           </Card.Text>
@@ -48,7 +48,7 @@ export default class AllPark extends Component {
                         >
                           <Card.Img src={`/img/${imageArr[index%imageArr.length]}`}></Card.Img>
                           <Card.Body>
-                            <Card.Title>{parks.name}Park</Card.Title>
+                            <Card.Title>{parks.name} Park</Card.Title>
                             <Card.Text>
                               <b>Native Lands:</b> {parks.native_land}
                             </Card.Text>
