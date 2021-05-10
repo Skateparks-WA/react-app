@@ -37,9 +37,7 @@ export default class About extends Component {
               <Jumbotron className="team-jumbo">
                 <h1>Daniel Haugen</h1>
                 <p>
-                  This is a simple hero unit, a simple jumbotron-style component
-                  for calling extra attention to featured content or
-                  information.
+                  Hello! I've worked in digital marketing for the last 5 years and am now studying full-stack Javascript development because I love working with the internet. I've been skating for the past 10 years and building a skatepark finder app has been a goal of mine for the past year or so. 
                 </p>
                 <p>
                   <Button variant="primary">Git Hub</Button>
