@@ -89,14 +89,13 @@ export default class Search extends Component {
         <Card
           text="light"
           className="search-card"
-          style={{ marginTop: "-100px" }}
+          style={{ marginTop: "-150px" }}
         >
           <Card.Header>❤️🛹</Card.Header>
           <Card.Body>
-            <Card.Title>Search Skate Parks</Card.Title>
+            <Card.Title>Search WA Skateparks</Card.Title>
             <Card.Text>
-              Find and filter skate parks nearest your address or city. Click in
-              on each park to find more info
+              Find a skatepark near you. Or click "All Parks" below to view all of them. 
             </Card.Text>
             <Form role="form" onSubmit={this.getLocation}>
               <Form.Row className="align-items-center">
@@ -106,7 +105,7 @@ export default class Search extends Component {
                   </Form.Label>
                   <Form.Control
                     id="inlineFormInputName"
-                    placeholder="Skate or Die"
+                    placeholder="Enter a city, zip code or your address"
                     onChange={(e) =>
                       this.setState({ searchQuery: e.target.value })
                     }
@@ -116,10 +115,10 @@ export default class Search extends Component {
                   <Button type="submit">Submit</Button>
                 </Col>
               </Form.Row>
+              Filters:
               <Form.Check
-                inline
                 type="checkbox"
-                label="Covered"
+                label="Covered Skateparks"
                 onChange={this.filterCovered}
               />
             </Form>
